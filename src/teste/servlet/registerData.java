@@ -24,8 +24,8 @@ public class registerData extends HttpServlet {
         String dataInput = request.getParameter("data");
         PrintWriter out = response.getWriter();
         out.println("<html><body>Your input, " + dataInput + ", was successfully registered!</body></html>");
-    //type http://ip:port/folder/url_ending?variable=data_input
-    // http://localhost:8080/webPage/register?data=dataInput
+    //type: http://ip:port/folder/url_ending?variable=data_input
+    //ex: http://localhost:8080/webPage/register?data=test
 	}
 
 }
