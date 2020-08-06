@@ -2,7 +2,6 @@ package teste.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,11 +23,17 @@ public class registerData extends HttpServlet {
 		
 		System.out.println("Registering new data...");
 		
-        String dataInput = request.getParameter("data");
+        String emailUsuario = request.getParameter("data");
         
-        PrintWriter out = response.getWriter();
+        Email email = new Email();
         
-        out.println("<html><body>Your input, " + dataInput + ", was successfully registered!</body></html>");
+        email.setEmail(emailUsuario);
+        
+        Database database = new Database();
+        database.add(email);
+        
+        PrintWriter out = response.getWriter(); 
+        out.println("<html><body>Your email, " + emailUsuario + ", was successfully registered!</body></html>");
     //type: http://ip:port/folder/url_pattern?variable=data_input
     //ex: http://localhost:8080/webPage/register?data=test
 	}
