@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 //teste
-@WebServlet(urlPatterns="/teste")
+@WebServlet(urlPatterns="/test")
 
-public class TesteServlet extends HttpServlet{
+public class ServletTest extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,7 @@ public class TesteServlet extends HttpServlet{
 	        out.println("</body>");
 	        out.println("</html>");
 
-	        System.out.println("O Servlet de teste foi chamado.");
+	        System.out.println("The test servlet was called.");
 	    }
 
 }
