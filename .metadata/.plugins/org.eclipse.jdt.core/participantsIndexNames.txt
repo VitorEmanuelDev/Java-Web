@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-/home/vitor/Desktop/repos/Java-Web/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1330845122.index
-/TaskManager/src
