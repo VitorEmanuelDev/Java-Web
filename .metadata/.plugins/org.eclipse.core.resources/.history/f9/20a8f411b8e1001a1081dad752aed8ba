@@ -1,0 +1,74 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Database {
+	
+	private static List<Task> List = new ArrayList<>();
+	private static List<User> UserList = new ArrayList<>();
+	private static Integer sequentialkey = 1;
+	
+	static {
+		Task task = new Task();
+		task.setId(sequentialkey++);
+		task.setDescription("Alura");
+		Task empresa2 = new Task();
+		empresa2.setId(sequentialkey++);
+		empresa2.setDescription("Caelum");
+		List.add(task);
+		List.add(empresa2);
+		
+		User u1 = new User();
+		u1.setLogin("nico");
+		u1.setSenha("12345");
+		User u2 = new User();
+		u2.setLogin("ana");
+		u2.setSenha("12345");
+		
+		UserList.add(u1);
+		UserList.add(u2);
+	}
+
+	public void adiciona(Task empresa) {
+		empresa.setId(Database.sequentialkey++);
+		Database.List.add(empresa);
+	}
+	
+	public List<Task> getTask(){
+		return Database.List;
+	}
+
+	public void removeTask(Integer id) {
+		
+		Iterator<Task> it = List.iterator();
+		
+		while(it.hasNext()) {
+			Task emp = it.next();
+			
+			if(emp.getId() == id) {
+				it.remove();
+			}
+		}
+	}
+
+	public Task lookForTaskById(Integer id) {
+		for (Task empresa : List) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public User userExists(String login, String senha) {
+		for(User usuario : UserList) {
+			if(usuario.ehIgual(login, senha)) {
+				return usuario;
+			}
+		}
+		return null;
+	}
+
+}

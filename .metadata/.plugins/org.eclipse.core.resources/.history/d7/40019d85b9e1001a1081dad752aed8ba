@@ -1,0 +1,31 @@
+package model;
+
+import java.util.Date;
+
+public class Task {
+
+	private Integer id;
+	private String nome;
+	private Date dataAbertura = new Date();
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getDescription() {
+		return nome;
+	}
+	public void setDescription(String nome) {
+		this.nome = nome;
+	}
+	
+	public void setDeadline(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
+	}
+	
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+}
